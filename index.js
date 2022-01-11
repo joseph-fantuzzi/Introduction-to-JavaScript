@@ -20,7 +20,10 @@ Do the following:
    HINT: no function required
 */
 
-
+const votingAge = 18;
+if (votingAge >= 18) {
+  console.log(true);
+}
 
 /*
 Task 1b - Values
@@ -33,9 +36,12 @@ Do the following:
    HINT: no function required
 */
 
-
-
-
+let firstVariable = 'red';
+let secondVariable = 'blue';
+if (secondVariable === 'blue') {
+  firstVariable = 'pink';
+}
+console.log(firstVariable);
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -48,8 +54,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+let numberString = '1999';
+console.log(parseInt(numberString, 10));
 
 /*
 Task 1d - Multiply
