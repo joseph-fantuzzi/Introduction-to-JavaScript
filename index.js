@@ -127,18 +127,16 @@ function hungryDog(weight, age){
     } else if (weight > 15) {
       return 0.02 * weight;
     }
-  } else if (age < 1) {
-    if (age >= 2/12 && age <= 4/12) {
-      return 0.1 * weight;
-    } else if (age >= 4/12 && age <= 7/12) {
+  } else if (age >= 0.167 && age <= 0.333) {
+    return 0.1 * weight;
+  } else if (age > 0.333 && age < 0.583) {
       return 0.05 * weight;
-    } else if (age >= 7/12 && age <= 1) {
+  } else if (age >= 0.583 && age < 1) {
       return 0.04 * weight;
-    }
   }
 }
 
-console.log(hungryDog(15,1));
+console.log(hungryDog(15,1)); 
 
 
 
@@ -233,7 +231,7 @@ Using the feet function below do the following:
 */
 
 function feet(numberOfCm){
-  let numberOfFt = numberOfCm * 0.0328084;
+  let numberOfFt = numberOfCm / 30.48;
   return numberOfFt;
 }
 
@@ -252,11 +250,11 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(startingNum){
     for (let i = startingNum; i > 0; i--) {
-      console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`);
+      return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
     }
 }
 
-annoyingSong(6);
+console.log(annoyingSong(6));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -304,10 +302,18 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(stringParam) {
+  let numOfVowels = 0;
+  let newArray = stringParam.toLowerCase().split('');
+  newArray.forEach((letter, index) => {
+    if (newArray[index] === 'a' || newArray[index] === 'e' || newArray[index] === 'i' || newArray[index] === 'o' || newArray[index] === 'u' || newArray[index] === 'y') {
+      numOfVowels++;
+    }
+  })
+  return numOfVowels;
 }
 
+console.log(vowelCounter('Hi my name is JOSEPH FANTUZZI.'));
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
